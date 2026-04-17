@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>مخطط رحلتي</title>
+
+  <!-- ── PWA / App Meta ── -->
+  <meta name="description" content="نظّم برنامجك السياحي بكل سهولة">
+  <meta name="theme-color" content="#1A1208">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="مخطط رحلتي">
+
+  <!-- صور الموقع -->
+  <link rel="icon" type="image/png" href="travel.jpg" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="travel.jpg" />
+  <link rel="shortcut icon" href="travel.jpg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="travel.jpg" />
+  <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+  <link rel="manifest" href="travel.jpg" />
+  <!-- ── Fonts ── -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- ── Styles ── -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ════════════════════════════════
+       Header
+  ════════════════════════════════ -->
+  <div class="header">
+    <div class="header-icon">🗺️</div>
+    <h1>مخطط رحلتي</h1>
+    <p>نظّم برنامجك السياحي بكل سهولة</p>
+  </div>
+
+  <!-- ════════════════════════════════
+       Summary Bar
+  ════════════════════════════════ -->
+  <div class="summary-bar">
+    <div class="summary-item">
+      <div class="val" id="total-places">0</div>
+      <div class="lbl">مكان</div>
+    </div>
+    <div class="summary-item">
+      <div class="val" id="total-days">0</div>
+      <div class="lbl">يوم</div>
+    </div>
+    <div class="summary-item">
+      <div class="val" id="total-visited">0</div>
+      <div class="lbl">تمت زيارته</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       Days Container
+  ════════════════════════════════ -->
+  <div class="days-container" id="days-container"></div>
+
+  <!-- ════════════════════════════════
+       Custom Confirm Modal
+       (replaces browser confirm — works on all mobile browsers)
+  ════════════════════════════════ -->
+  <div class="modal-overlay hidden" id="confirm-modal">
+    <div class="modal-box">
+      <div class="modal-icon">🗑️</div>
+      <div class="modal-title" id="modal-title">تأكيد الحذف</div>
+      <div class="modal-msg" id="modal-msg">هل أنت متأكد؟</div>
+      <div class="modal-btns">
+        <button class="modal-btn modal-btn-confirm" id="modal-confirm">حذف</button>
+        <button class="modal-btn modal-btn-cancel" id="modal-cancel">إلغاء</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       FAB — Bottom Actions
+  ════════════════════════════════ -->
+  <div class="fab-area">
+    <button class="fab fab-secondary" onclick="exportPlan()">📤 تصدير</button>
+    <button class="fab fab-primary" onclick="importPlan()">📥 استرداد</button>
+  </div>
+
+  <!-- ════════════════════════════════
+       Script
+  ════════════════════════════════ -->
+  <script src="app.js"></script>
+
+</body>
+
+</html>
